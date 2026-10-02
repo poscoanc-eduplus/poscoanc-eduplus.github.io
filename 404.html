@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Edu+</title>
+<script>
+  // /app/admin 처럼 앱 안쪽 주소를 바로 열면 GitHub Pages 에는 그 파일이 없다.
+  // 앱 첫 화면으로 보내면서 원래 주소를 넘기고, 앱이 그 주소로 되돌린다.
+  var l = location;
+  if (l.pathname.indexOf('/app/') === 0) {
+    l.replace('/app/?__spa=' + encodeURIComponent(l.pathname.slice(4) + l.search) + l.hash);
+  } else {
+    l.replace('/');
+  }
+</script>
